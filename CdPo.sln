@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo", "CdPo\CdPo.csproj", "{519CB8FB-22A2-456B-A867-A45B83D02289}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{519CB8FB-22A2-456B-A867-A45B83D02289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519CB8FB-22A2-456B-A867-A45B83D02289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519CB8FB-22A2-456B-A867-A45B83D02289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519CB8FB-22A2-456B-A867-A45B83D02289}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
