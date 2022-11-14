@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo.Model", "CdPo.Model\Cd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo.Common", "CdPo.Common\CdPo.Common.csproj", "{E317B6FF-FE60-4ACD-8C0B-EC8F736B037B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo.Web", "CdPo.Web\CdPo.Web.csproj", "{779FDED1-126F-47DD-B02D-B632E87E5AED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{E317B6FF-FE60-4ACD-8C0B-EC8F736B037B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E317B6FF-FE60-4ACD-8C0B-EC8F736B037B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E317B6FF-FE60-4ACD-8C0B-EC8F736B037B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779FDED1-126F-47DD-B02D-B632E87E5AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779FDED1-126F-47DD-B02D-B632E87E5AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779FDED1-126F-47DD-B02D-B632E87E5AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779FDED1-126F-47DD-B02D-B632E87E5AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
