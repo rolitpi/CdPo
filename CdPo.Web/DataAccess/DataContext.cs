@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-namespace CdPo.DataAccess;
+namespace CdPo.Web.DataAccess;
 
 public class DataContext: DbContext
 {

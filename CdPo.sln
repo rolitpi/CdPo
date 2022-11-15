@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo", "CdPo\CdPo.csproj", "{519CB8FB-22A2-456B-A867-A45B83D02289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo.Migrations", "CdPo.Migrations\CdPo.Migrations.csproj", "{C77C0845-2A4F-434F-9ECC-D27FE478D279}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo.Model", "CdPo.Model\CdPo.Model.csproj", "{8E7727FA-33F5-4E75-B658-FD5F343B227E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdPo.Common", "CdPo.Common\CdPo.Common.csproj", "{E317B6FF-FE60-4ACD-8C0B-EC8F736B037B}"
@@ -20,10 +18,6 @@ Global
 		{519CB8FB-22A2-456B-A867-A45B83D02289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{519CB8FB-22A2-456B-A867-A45B83D02289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{519CB8FB-22A2-456B-A867-A45B83D02289}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C77C0845-2A4F-434F-9ECC-D27FE478D279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C77C0845-2A4F-434F-9ECC-D27FE478D279}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C77C0845-2A4F-434F-9ECC-D27FE478D279}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C77C0845-2A4F-434F-9ECC-D27FE478D279}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E7727FA-33F5-4E75-B658-FD5F343B227E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E7727FA-33F5-4E75-B658-FD5F343B227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E7727FA-33F5-4E75-B658-FD5F343B227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
