@@ -1,15 +1,18 @@
 ﻿using CdPo.Model.Entities;
 using CdPo.Model.Interfaces;
 using CdPo.Model.Interfaces.Files;
+using CdPo.Web.DataAccess;
 
 namespace CdPo.Web.Services.Files;
 
+///<inheritdoc/>>
 public class EfFileMetadataRepository: IFileMetadataRepository
 {
-    private readonly IDataContext _dataContext;
+    private readonly DataContext _dataContext;
     
-    public EfFileMetadataRepository(IDataContext dataContext) => _dataContext = dataContext;
+    public EfFileMetadataRepository(DataContext dataContext) => _dataContext = dataContext;
 
+    ///<inheritdoc/>>
     public async Task<IFileMetadata> CreateFileMetadataAsync(
         string fileName,
         string extension,
@@ -27,6 +30,7 @@ public class EfFileMetadataRepository: IFileMetadataRepository
         return entity.Entity;
     }
 
+    ///<inheritdoc/>>
     public async Task<IFileMetadata> GetFileMetadataAsync(long id, CancellationToken cancellationToken = default) 
         => await _dataContext.Files.FindAsync(id);
 }

@@ -3,7 +3,9 @@ using System.Reflection;
 using CdPo.Model.Interfaces;
 using CdPo.Model.Interfaces.Files;
 using CdPo.Web.DataAccess;
+using CdPo.Web.Providers;
 using CdPo.Web.Services.Files;
+using CdPo.Web.Services.Storage;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -13,7 +15,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(o => 
+        o.Conventions.Add(new GenericControllerRouteConvention())).
+    ConfigureApplicationPartManager(m => 
+        m.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -28,23 +33,17 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
 
-builder.Services.AddScoped<IDataContext>(provider => provider.GetService<DataContext>());
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(EfGenericRepository<>)); 
 builder.Services.TryAddTransient<IFileManager, FileManager>();
 builder.Services.TryAddTransient<IFileProvider, LocalFileProvider>();
 builder.Services.TryAddTransient<IFileMetadataRepository, EfFileMetadataRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 

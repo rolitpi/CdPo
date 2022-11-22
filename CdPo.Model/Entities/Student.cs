@@ -1,10 +1,12 @@
 ﻿using CdPo.Common.Entity;
+using CdPo.Model.Attributes;
 
 namespace CdPo.Model.Entities;
 
 /// <summary>
 /// Обучающийся
 /// </summary>
+[GeneratedController("student", "Обучающиеся")]
 public class Student: BaseEntity
 {
     /// <summary>

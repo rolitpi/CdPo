@@ -1,11 +1,13 @@
 ﻿using CdPo.Common.Entity;
 using CdPo.Common.Enum;
+using CdPo.Model.Attributes;
 
 namespace CdPo.Model.Entities;
 
 /// <summary>
 /// Дисциплина/предмет
 /// </summary>
+[GeneratedController("discipline", "Предметы")]
 public class Discipline: BaseEntity
 {
     /// <summary>

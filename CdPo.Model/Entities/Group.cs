@@ -1,11 +1,13 @@
 ﻿using CdPo.Common.Entity;
 using CdPo.Common.Enum;
+using CdPo.Model.Attributes;
 
 namespace CdPo.Model.Entities;
 
 /// <summary>
 /// Студенческая группа
 /// </summary>
+[GeneratedController("group", "Группы")]
 public class Group: BaseEntity
 {
     /// <summary>
