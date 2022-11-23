@@ -27,11 +27,16 @@ builder.Services.AddSwaggerGen(c =>
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath, true);
+    c.EnableAnnotations();
 });
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+    );
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(EfGenericRepository<>)); 
 builder.Services.TryAddTransient<IFileManager, FileManager>();

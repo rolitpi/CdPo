@@ -51,12 +51,13 @@ namespace CdPo.Web.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValueSql("0");
 
-                    b.Property<long?>("StudentId")
+                    b.Property<long>("StudentId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("StudentId")
+                        .IsUnique();
 
                     b.ToTable("Contracts");
                 });
@@ -232,7 +233,7 @@ namespace CdPo.Web.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValueSql("0");
 
-                    b.Property<long?>("PersonId")
+                    b.Property<long>("PersonId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Position")
@@ -240,7 +241,8 @@ namespace CdPo.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonId");
+                    b.HasIndex("PersonId")
+                        .IsUnique();
 
                     b.ToTable("Staffs");
                 });
@@ -253,7 +255,7 @@ namespace CdPo.Web.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<long?>("GroupId")
+                    b.Property<long>("GroupId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("ObjectCreateDate")
@@ -271,14 +273,15 @@ namespace CdPo.Web.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValueSql("0");
 
-                    b.Property<long?>("PersonId")
+                    b.Property<long>("PersonId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GroupId");
 
-                    b.HasIndex("PersonId");
+                    b.HasIndex("PersonId")
+                        .IsUnique();
 
                     b.ToTable("Students");
                 });
@@ -291,10 +294,10 @@ namespace CdPo.Web.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<long?>("DisciplineId")
+                    b.Property<long>("DisciplineId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("GroupId")
+                    b.Property<long>("GroupId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("ObjectCreateDate")
@@ -312,7 +315,7 @@ namespace CdPo.Web.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValueSql("0");
 
-                    b.Property<long?>("TeacherId")
+                    b.Property<long>("TeacherId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("TrainingStartDate")
@@ -324,7 +327,8 @@ namespace CdPo.Web.Migrations
 
                     b.HasIndex("GroupId");
 
-                    b.HasIndex("TeacherId");
+                    b.HasIndex("TeacherId", "GroupId", "DisciplineId")
+                        .IsUnique();
 
                     b.ToTable("TrainingCourses");
                 });
@@ -333,7 +337,9 @@ namespace CdPo.Web.Migrations
                 {
                     b.HasOne("CdPo.Model.Entities.Student", "Student")
                         .WithMany()
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Student");
                 });
@@ -342,7 +348,9 @@ namespace CdPo.Web.Migrations
                 {
                     b.HasOne("CdPo.Model.Entities.Person", "Person")
                         .WithMany()
-                        .HasForeignKey("PersonId");
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Person");
                 });
@@ -350,12 +358,16 @@ namespace CdPo.Web.Migrations
             modelBuilder.Entity("CdPo.Model.Entities.Student", b =>
                 {
                     b.HasOne("CdPo.Model.Entities.Group", "Group")
-                        .WithMany()
-                        .HasForeignKey("GroupId");
+                        .WithMany("Students")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CdPo.Model.Entities.Person", "Person")
                         .WithMany()
-                        .HasForeignKey("PersonId");
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Group");
 
@@ -366,21 +378,32 @@ namespace CdPo.Web.Migrations
                 {
                     b.HasOne("CdPo.Model.Entities.Discipline", "Discipline")
                         .WithMany()
-                        .HasForeignKey("DisciplineId");
+                        .HasForeignKey("DisciplineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CdPo.Model.Entities.Group", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId");
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CdPo.Model.Entities.Staff", "Teacher")
                         .WithMany()
-                        .HasForeignKey("TeacherId");
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Discipline");
 
                     b.Navigation("Group");
 
                     b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("CdPo.Model.Entities.Group", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }

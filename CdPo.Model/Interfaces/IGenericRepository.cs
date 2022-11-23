@@ -2,6 +2,8 @@
 
 using CdPo.Common.Entity;
 
+using Microsoft.EntityFrameworkCore.Query;
+
 namespace CdPo.Model.Interfaces;
 
 /// <summary>
@@ -16,9 +18,11 @@ public interface IGenericRepository<TEntity>
     /// </summary>
     /// <param name="wherePredicate">Условный предикат</param>
     /// <param name="cancellationToken">Токен отмены</param>
+    /// <param name="includes">Указания для выгрузки дополнительных сущностей</param>
     Task<IEnumerable<TEntity>> GetAllAsync(
-        Expression<Func<TEntity, bool>> wherePredicate = default, 
-        CancellationToken cancellationToken = default);
+        Expression<Func<TEntity, bool>> wherePredicate = default,
+        CancellationToken cancellationToken = default,
+        params string[] includes);
 
     /// <summary>
     /// Получить первую запись сущности <see cref="TEntity"/>

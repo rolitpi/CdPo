@@ -1,4 +1,6 @@
-﻿namespace CdPo.Common.Entity;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace CdPo.Common.Entity;
 
 /// <summary>Базовая сущность с идентификатором(Тип идентификатора Int64)</summary>
 public class PersistentObject : IEntity, IHaveId
@@ -10,5 +12,6 @@ public class PersistentObject : IEntity, IHaveId
     }
 
     /// <summary>Идентификатор</summary>
+    [SwaggerSchema(ReadOnly = true)]
     public virtual long Id { get; set; }
 }

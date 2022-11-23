@@ -12,6 +12,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
     </ItemGroup>
 
 </Project>

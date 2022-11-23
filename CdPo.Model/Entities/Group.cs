@@ -2,6 +2,8 @@
 using CdPo.Common.Enum;
 using CdPo.Model.Attributes;
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace CdPo.Model.Entities;
 
 /// <summary>
@@ -19,4 +21,10 @@ public class Group: BaseEntity
     /// Форма обучения группы
     /// </summary>
     public EducationForm EducationForm { get; set; }
+
+    /// <summary>
+    /// Студенты группы
+    /// </summary>
+    [SwaggerSchema(ReadOnly = true)]
+    public List<Student> Students { get; set; }
 }

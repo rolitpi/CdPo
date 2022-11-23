@@ -5,6 +5,7 @@ using CdPo.Model.Interfaces;
 using CdPo.Web.DataAccess;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace CdPo.Web.Services.Storage;
 
@@ -29,10 +30,26 @@ public class EfGenericRepository<TEntity>: IGenericRepository<TEntity>
     }
 
     ///<inheritdoc/>
-    public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> wherePredicate = default, CancellationToken cancellationToken = default)
-        => wherePredicate != default
-            ? await DbSet.AsNoTracking().Where(wherePredicate).ToListAsync(cancellationToken)
-            : await DbSet.AsNoTracking().ToListAsync(cancellationToken);
+    public async Task<IEnumerable<TEntity>> GetAllAsync(
+        Expression<Func<TEntity, bool>> wherePredicate = default,
+        CancellationToken cancellationToken = default,
+        params string[] includes)
+    {
+        IQueryable<TEntity> query = DbSet;
+
+        if (wherePredicate != default)
+        {
+            query = query.Where(wherePredicate);
+        }
+
+        if (includes != default)
+        {
+            query = includes.Aggregate(query, 
+                (current, include) => current.Include(include));
+        }
+
+        return await query.ToListAsync(cancellationToken);
+    }
 
     ///<inheritdoc/>
     public Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> wherePredicate = default, CancellationToken cancellationToken = default)
@@ -66,15 +83,4 @@ public class EfGenericRepository<TEntity>: IGenericRepository<TEntity>
         DbSet.Remove(entity);
         await DataContext.SaveChangesAsync(cancellationToken);
     }
-
-    public IEnumerable<TEntity> GetWithInclude(Func<TEntity, bool> predicate = default, 
-        params Expression<Func<TEntity, object>>[] includeProperties) 
-        => predicate != default
-            ? Include(includeProperties).Where(predicate).ToList()
-            : Include(includeProperties).ToList();
-
-    private IEnumerable<TEntity> Include(params Expression<Func<TEntity, object>>[] includeProperties)
-        => includeProperties
-            .Aggregate(DbSet.AsNoTracking(), 
-                (current, includeProperty) => current.Include(includeProperty));
 }

@@ -1,5 +1,11 @@
-﻿using CdPo.Common.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+using CdPo.Common.Entity;
 using CdPo.Model.Attributes;
+
+using Microsoft.EntityFrameworkCore;
+
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace CdPo.Model.Entities;
 
@@ -7,6 +13,7 @@ namespace CdPo.Model.Entities;
 /// Сотрудник
 /// </summary>
 [GeneratedController("staff", "Сотрудники")]
+[Index(nameof(PersonId), IsUnique = true)]
 public class Staff: BaseEntity
 {
     /// <summary>
@@ -17,5 +24,10 @@ public class Staff: BaseEntity
     /// <summary>
     /// Общая информация о человеке
     /// </summary>
-    public virtual Person Person { get; set; }
+    [SwaggerSchema(ReadOnly = true)]
+    internal Person Person { get; set; }
+    
+    [ForeignKey(nameof(Person))]
+    [SwaggerSchema(WriteOnly = true)]
+    public long PersonId { get; set; }
 }

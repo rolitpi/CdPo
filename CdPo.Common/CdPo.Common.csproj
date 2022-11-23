@@ -5,4 +5,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
+    </ItemGroup>
+
 </Project>

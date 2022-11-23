@@ -1,5 +1,6 @@
 ﻿using CdPo.Common.Entity;
 using CdPo.Model.Interfaces;
+using CdPo.Web.DataAccess;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,7 +43,12 @@ public class BaseController<TEntity>: BaseController
     [HttpGet]
     public async Task<IActionResult> Get(CancellationToken cancellationToken = default)
     {
-        var entities = await Repository.GetAllAsync(cancellationToken: cancellationToken);
+        var props = typeof(TEntity).GetProperties()
+            .Where(x => x.PropertyType.IsSubclassOf(typeof(BaseEntity)))
+            .Select(x => x.Name)
+            .ToArray();
+        var entities = await Repository.GetAllAsync(cancellationToken: cancellationToken,
+            includes: props);
         return Ok(entities);
     }
 
