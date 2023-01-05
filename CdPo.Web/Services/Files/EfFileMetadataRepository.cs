@@ -17,16 +17,19 @@ public class EfFileMetadataRepository: IFileMetadataRepository
         string fileName,
         string extension,
         long size,
+        string cachedName,
         CancellationToken cancellationToken = default)
     {
         var file = new FileMetadata
         {
             Extension = extension,
             Name = fileName,
-            Size = size
+            Size = size,
+            CachedName = cachedName
         };
 
         var entity = await _dataContext.Files.AddAsync(file, cancellationToken);
+        await _dataContext.SaveChangesAsync(cancellationToken);
         return entity.Entity;
     }
 

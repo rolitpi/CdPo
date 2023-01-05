@@ -1,11 +1,12 @@
 ﻿using CdPo.Common.Entity;
 using CdPo.Model.Entities;
+using CdPo.Model.Interfaces;
 
 using Microsoft.EntityFrameworkCore;
 
 namespace CdPo.Web.DataAccess;
 
-public class DataContext: DbContext
+public class DataContext: DbContext, IDataStore
 {
     public DataContext(DbContextOptions options) : base(options) {}
 

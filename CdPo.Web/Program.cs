@@ -1,5 +1,9 @@
 using System.Reflection;
 
+using Castle.Windsor;
+
+using CdPo.Common.Extensions;
+using CdPo.Model.Configuration;
 using CdPo.Model.Interfaces;
 using CdPo.Model.Interfaces.Files;
 using CdPo.Web.DataAccess;
@@ -7,19 +11,22 @@ using CdPo.Web.Providers;
 using CdPo.Web.Services.Files;
 using CdPo.Web.Services.Storage;
 
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+IWindsorContainer container = new WindsorContainer();
+builder.Host.UseWindsorContainerServiceProvider(container);
+
 builder.Services.AddControllers(o => 
-        o.Conventions.Add(new GenericControllerRouteConvention())).
-    ConfigureApplicationPartManager(m => 
+        o.Conventions.Add(new GenericControllerRouteConvention()))
+    .ConfigureApplicationPartManager(m => 
         m.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -37,11 +44,13 @@ builder.Services.AddControllersWithViews()
     .AddNewtonsoftJson(options =>
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
     );
+builder.Services.Configure<FileManagerSection>(builder.Configuration.GetSection("FileManager"));
 
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(EfGenericRepository<>)); 
-builder.Services.TryAddTransient<IFileManager, FileManager>();
-builder.Services.TryAddTransient<IFileProvider, LocalFileProvider>();
-builder.Services.TryAddTransient<IFileMetadataRepository, EfFileMetadataRepository>();
+container.RegisterTransient(typeof(IGenericRepository<>), typeof(EfGenericRepository<>));
+container.RegisterTransient<IFileManager, FileManager>();
+container.RegisterTransient<IFileProvider, LocalFileProvider>();
+container.RegisterTransient<IFileMetadataRepository, EfFileMetadataRepository>();
+container.RegisterSingleton<IDataStore, DataContext>(nameof(IDataStore));
 
 var app = builder.Build();
 

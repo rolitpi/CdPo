@@ -19,4 +19,6 @@ public class FileMetadata : BaseEntity, IFileMetadata
     /// <inheritdoc/>
     public string FullName { get; }
 
+    /// <inheritdoc/>
+    public string CachedName { get; set; }
 }

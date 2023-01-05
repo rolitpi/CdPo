@@ -27,6 +27,11 @@ public interface IFileMetadata
     string FullName { get; }
 
     /// <summary>
+    ///     Кэшированное имя файла.
+    /// </summary>
+    string CachedName { get; set; }
+
+    /// <summary>
     ///     Размер файла в байтах.
     /// </summary>
     long Size { get; set; }

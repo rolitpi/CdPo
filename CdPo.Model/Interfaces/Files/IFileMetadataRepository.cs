@@ -11,9 +11,10 @@ public interface IFileMetadataRepository
     /// <param name="fileName">Имя файла без расширения.</param>
     /// <param name="extension">Расширение файла.</param>
     /// <param name="size">Размер файла.</param>
+    /// <param name="cachedName">Кэшированное имя файла (физическое название).</param>
     /// <param name="cancellationToken">Токен отмены.</param>
     /// <returns>Метаданные файла.</returns>
-    Task<IFileMetadata> CreateFileMetadataAsync(string fileName, string extension, long size,
+    Task<IFileMetadata> CreateFileMetadataAsync(string fileName, string extension, long size, string cachedName,
         CancellationToken cancellationToken = default);
 
     /// <summary>

@@ -99,7 +99,8 @@ public class FileManager: IFileManager
     {
         var (fileNameWithoutExtension, extension) = SplitNameAndExtension(fileName);
         var size = content.Length;
-        return await FileMetadataRepository.CreateFileMetadataAsync(fileNameWithoutExtension, extension, size,
+        var cachedName = await FileProvider.SaveFileAsync(content, cancellationToken);
+        return await FileMetadataRepository.CreateFileMetadataAsync(fileNameWithoutExtension, extension, size, cachedName,
             cancellationToken);
     }
     
@@ -108,7 +109,7 @@ public class FileManager: IFileManager
         try
         {
             var metadata = await FileMetadataRepository.GetFileMetadataAsync(id, cancellationToken);
-            return await FileProvider.GetFileAsync(metadata.FullName, cancellationToken);
+            return await FileProvider.GetFileAsync(metadata.CachedName, cancellationToken);
         }
         catch (Exception ex)
         {
