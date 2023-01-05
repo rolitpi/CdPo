@@ -22,6 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CdPo.PrintForm.Handler\CdPo.PrintForm.Handler.csproj" />
       <ProjectReference Include="..\CdPo\CdPo.csproj" />
     </ItemGroup>
 

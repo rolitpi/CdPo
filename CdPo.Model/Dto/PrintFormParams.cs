@@ -1,4 +1,6 @@
-﻿namespace CdPo.Model.Dto;
+﻿using CdPo.Common.Enum;
+
+namespace CdPo.Model.Dto;
 
 /// <summary>
 /// Параметры для формирования печаток
@@ -14,9 +16,14 @@ public class PrintFormParams
     /// Тип печатной формы
     /// </summary>
     public int PrintFormType { get; set; }
-    
+
+    /// <summary>
+    /// Формат файла-результата
+    /// </summary>
+    public int PrintFileTypeInt { get; set; } = (int)PrintFileExt.Pdf;
+
     /// <summary>
     /// Другие параметры
     /// </summary>
-    public Dictionary<string, object> OtherParams { get; set; }
+    public Dictionary<string, object> OtherParams { get; set; } = new();
 }

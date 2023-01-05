@@ -2,16 +2,11 @@ using System.Reflection;
 
 using Castle.Windsor;
 
-using CdPo.Common.Extensions;
 using CdPo.Model.Configuration;
-using CdPo.Model.Interfaces;
-using CdPo.Model.Interfaces.Files;
 using CdPo.Web.DataAccess;
 using CdPo.Web.Providers;
-using CdPo.Web.Services.Files;
-using CdPo.Web.Services.Storage;
+using CdPo.Web.StartupHelpers;
 
-using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -46,11 +41,8 @@ builder.Services.AddControllersWithViews()
     );
 builder.Services.Configure<FileManagerSection>(builder.Configuration.GetSection("FileManager"));
 
-container.RegisterTransient(typeof(IGenericRepository<>), typeof(EfGenericRepository<>));
-container.RegisterTransient<IFileManager, FileManager>();
-container.RegisterTransient<IFileProvider, LocalFileProvider>();
-container.RegisterTransient<IFileMetadataRepository, EfFileMetadataRepository>();
-container.RegisterSingleton<IDataStore, DataContext>(nameof(IDataStore));
+ServicesRegistrationHelper.RegisterServices(container);
+PrintFilesHelper.RegisterReportQueries(container);
 
 var app = builder.Build();
 

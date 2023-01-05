@@ -12,7 +12,7 @@ public abstract class AbstractReportQuery
     /// <summary>
     /// Путь до директории с шаблонами
     /// </summary>
-    public const string ReportRootPath = ""; //todo
+    public const string ReportRootPath = "CdPo.PrintForm.Handler.Content";
     
     /// <summary>
     /// Дополнительные параметры для формирования печатной формы
@@ -46,4 +46,10 @@ public abstract class AbstractReportQuery
     /// <param name="entityId">Идентификатор сущности</param>
     /// <returns>DataSet с таблицами, которые содержатся в отчете</returns>
     public abstract Task<DataSet> GetReportData(IDataStore database, long entityId);
+    
+    /// <summary>
+    /// Получить DataSet по умолчанию
+    /// </summary>
+    /// <returns>Пустой DataSet</returns>
+    protected async Task<DataSet> GetDefaultDataSetAsync() => await Task.FromResult(new DataSet(DataSetDefaultName));
 }
