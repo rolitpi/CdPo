@@ -63,7 +63,18 @@ public class FileManager: IFileManager
 
         return GetFileInternalAsync(id, cancellationToken);
     }
-    
+
+    /// <inheritdoc />
+    public Task<Stream> GetFileAsync(IFileMetadata file, CancellationToken cancellationToken = default)
+    {
+        if (file == default)
+        {
+            throw new ArgumentException("Передан пустой объект метаданных файла");
+        }
+
+        return GetFileAsync(file.Id, cancellationToken);
+    }
+
     /// <summary>
     ///     Разделить наименование и расширение файла.
     /// </summary>

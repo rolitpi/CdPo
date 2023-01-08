@@ -56,10 +56,4 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-app.MapControllerRoute(
-  name: "api",
-  pattern: "/api/{controller}/{id?}");
-
-app.MapFallbackToFile("/index.html");
-
 app.Run();

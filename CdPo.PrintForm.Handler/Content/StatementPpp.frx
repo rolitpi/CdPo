@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report ScriptLanguage="CSharp" ReportInfo.Created="01/06/2023 13:54:14" ReportInfo.Modified="01/06/2023 14:01:28" ReportInfo.CreatorVersion="2019.2.0.0">
-  <Dictionary/>
   <ReportPage Name="Vedomost" LeftMargin="15" Watermark.Font="Arial, 60pt">
     <ReportTitleBand Name="ReportTitle1" Width="699.3" Height="105.83">
       <TextObject Name="Memo3" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого) " Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>

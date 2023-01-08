@@ -21,4 +21,10 @@ public interface IFileManager
     /// <param name="cancellationToken">Токен отмены.</param>
     /// <returns>Поток.</returns>
     Task<Stream> GetFileAsync(long id, CancellationToken cancellationToken = default);
+    
+    /// <summary>Получить файл (поток).</summary>
+    /// <param name="file">Объект метаданных файла.</param>
+    /// <param name="cancellationToken">Токен отмены.</param>
+    /// <returns>Поток.</returns>
+    Task<Stream> GetFileAsync(IFileMetadata file, CancellationToken cancellationToken = default);
 }
