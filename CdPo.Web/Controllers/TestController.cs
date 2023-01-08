@@ -1,16 +1,16 @@
-﻿using CdPo.Common.Entity;
+﻿using CdPo.Common.Dto;
+using CdPo.Common.Entity;
 using CdPo.Common.Enum;
-using CdPo.Model.Dto;
+using CdPo.Common.Extensions;
 using CdPo.Model.Interfaces;
 using CdPo.Model.Interfaces.Files;
 using CdPo.Model.Interfaces.PrintForms;
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CdPo.Web.Controllers;
 
-[Route("api/test")]
+[Route("api/[controller]")]
 public class TestController: BaseController
 {
     private readonly IDataStore _dataStore;
@@ -32,12 +32,12 @@ public class TestController: BaseController
     [HttpGet]
     public async Task<IActionResult> Get(CancellationToken cancellationToken = default)
     {
-        var printFormParams = new PrintFormParams
-        {
-            EntityId = 1,
-            PrintFormType = (int)PrintFileType.StatementPpp
-        };
-        var file = await _printFileService.CreatePrintFileAsync(printFormParams, cancellationToken);
-        return Ok();
+        var printForms = Enum.GetValues(typeof(PrintFileType)).Cast<PrintFileType>()
+            .Select(x => new EntityReferenceWithNameDto<BaseEntity>
+            {
+                Id = (int)x,
+                Name = x.GetDisplayName()
+            });
+        return Ok(printForms);
     }
 }

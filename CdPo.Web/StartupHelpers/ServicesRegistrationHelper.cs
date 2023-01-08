@@ -28,5 +28,6 @@ public static class ServicesRegistrationHelper
         container.RegisterTransient<IFileMetadataRepository, EfFileMetadataRepository>();
         container.RegisterTransient<IPrintFileService, PrintFileService>();
         container.RegisterSingleton<IDataStore, DataContext>(nameof(IDataStore));
+        container.RegisterSingleton<IHttpContextAccessor, HttpContextAccessor>();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace CdPo.Common.Entity;
+﻿using CdPo.Common.Entity;
+
+namespace CdPo.Common.Dto;
 
 /// <summary>
 /// Дто-обертка сущности из бд

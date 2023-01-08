@@ -40,11 +40,14 @@ builder.Services.AddControllersWithViews()
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
     );
 builder.Services.Configure<FileManagerSection>(builder.Configuration.GetSection("FileManager"));
+builder.Services.AddRazorPages();
 
 ServicesRegistrationHelper.RegisterServices(container);
 PrintFilesHelper.RegisterReportQueries(container);
 
 var app = builder.Build();
+
+app.UseStaticFiles();
 
 app.UseSwagger();
 app.UseSwaggerUI();
@@ -52,5 +55,11 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.MapControllerRoute(
+  name: "api",
+  pattern: "/api/{controller}/{id?}");
+
+app.MapFallbackToFile("/index.html");
 
 app.Run();
