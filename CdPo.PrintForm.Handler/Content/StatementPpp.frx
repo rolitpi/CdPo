@@ -1,430 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="01/06/2023 13:54:14" ReportInfo.Modified="01/06/2023 14:01:28" ReportInfo.CreatorVersion="2019.2.0.0">
-  <ReportPage Name="Vedomost" LeftMargin="15" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle1" Width="699.3" Height="105.83">
-      <TextObject Name="Memo3" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого) " Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <ChildBand Name="Child1" Top="108.61" Width="699.3" Height="173.86">
-        <TextObject Name="Memo4" Left="11.34" Width="680.32" Height="18.9" Text="[form_ob]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo5" Left="11.34" Top="37.8" Width="680.32" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo6" Left="11.34" Top="75.59" Width="64.25" Height="18.9" Text="Семестр" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo7" Left="79.37" Top="75.59" Width="26.46" Height="18.9" Text="[IIF(&lt;semestr&gt;&gt;10,&lt;semestr&gt;-10,&lt;semestr&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo8" Left="113.39" Top="75.59" Width="177.64" Height="18.9" Text="[IIF(MonthOf(Date)&gt;=9,IntToStr(YearOf(Date))+'-'+IntToStr(YearOf(Date)+1),IntToStr(YearOf(Date)-1)+'-'+IntToStr(YearOf(Date)))] учебного года" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo9" Left="11.34" Top="94.49" Width="128.5" Height="18.9" Text="Форма контроля:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo10" Left="147.4" Top="94.49" Width="102.05" Height="18.9" Text="[IIF(&lt;TypeExCode&gt;=1,'Экзамен',IIF(&lt;TypeExCode&gt;=0,'Зачёт',IIF(&lt;TypeExCode&gt;=2,'Курсовая работа',IIF(&lt;TypeExCode&gt;=3,'Учеб. практика',IIF(&lt;TypeExCode&gt;=4,'Произв. практика',IIF(&lt;TypeExCode&gt;=8,'Зачёт с оценкой',''))))))]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo11" Left="11.34" Top="113.39" Width="359.06" Height="18.9" Text="Кол-во часов, проставляемых в зачетную книжку - " Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo12" Left="374.17" Top="113.39" Width="113.39" Height="18.9" Text="[hours] [typehours]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo13" Left="11.34" Top="132.28" Width="94.49" Height="18.9" Text="[aqRep.FacultyName]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo14" Left="11.34" Top="151.18" Width="60.47" Height="18.9" Text="Группа" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo15" Left="75.59" Top="151.18" Width="83.15" Height="18.9" Text="&quot;[Trim(&lt;aqRep.&quot;new_group&quot;&gt;)]&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo16" Left="158.74" Top="151.18" Width="37.8" Height="18.9" Text="курс" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo17" Left="200.32" Top="151.18" Width="34.02" Height="18.9" Text="[aqRep.kurs]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <ChildBand Name="Child6" Top="285.25" Width="699.3" Height="22.68" CanGrow="true" CanShrink="true">
-          <TextObject Name="Memo18" Left="11.34" Width="98.27" Height="18.9" Text="Дисциплина" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-          <TextObject Name="Memo19" Left="117.17" Width="582.05" Height="18.9" GrowToBottom="true" Text="[subject]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-          <ChildBand Name="Child7" Top="310.7" Width="699.3" Height="64.25">
-            <TextObject Name="Memo20" Left="11.34" Width="283.46" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-            <TextObject Name="Memo21" Left="294.8" Width="404.41" Height="18.9" Border.Lines="Bottom" Text="[teach]" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo22" Left="11.34" Top="18.9" Width="687.87" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo23" Left="11.34" Top="45.35" Width="291.02" Height="18.9" Text="Дата проведения [IIF(&lt;TypeExCode&gt;='0','зачёта','')][IIF(&lt;TypeExCode&gt;='1','экзамена','')][IIF(&lt;TypeExCode&gt;='2','курсовой работы','')][IIF(&lt;TypeExCode&gt;='3','учебной практики','')][IIF(&lt;TypeExCode&gt;='4','производственной практики','')] [EstimDatePrint]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-          </ChildBand>
-        </ChildBand>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/08/2023 15:27:38" ReportInfo.Modified="01/08/2023 16:42:02" ReportInfo.CreatorVersion="2019.2.0.0">
+  <Dictionary>
+    <TableDataSource Name="Examinees" ReferenceName="Data.Examinees" DataType="System.String" Enabled="true" TableName="Examinees">
+      <Column Name="FullName" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="105.83">
+      <TextObject Name="Memo3" Width="718.12" Height="105.83" Text="Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого)&#13;&#10;Центр дополнительного и профессионального образования" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
+      <ChildBand Name="Child1" Top="108.61" Width="718.2" Height="207.9">
+        <TextObject Name="Memo5" Top="37.8" Width="718.12" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
+        <TextObject Name="Memo4" Width="718.12" Height="18.9" Text="[EducationalForm]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        <TextObject Name="Text1" Top="75.6" Width="718.12" Height="18.9" Text="[AcademicYear]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
+        <TextObject Name="Text2" Top="94.5" Width="132.22" Height="18.9" Text="Форма контроля" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        <TextObject Name="Text3" Left="141.75" Top="94.5" Width="576.37" Height="18.9" Text="[ControlForm]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold, Underline"/>
+        <TextObject Name="Text4" Top="113.4" Width="132.22" Height="18.9" Text="Группа ППП" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        <TextObject Name="Text5" Left="141.75" Top="113.4" Width="576.37" Height="18.9" Text="[PppGroup]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt, style=Underline"/>
+        <TextObject Name="Text6" Top="132.3" Width="132.22" Height="18.9" Text="Дисциплина" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        <TextObject Name="Text7" Left="141.75" Top="132.3" Width="576.37" Height="18.9" Text="[Discipline]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt, style=Underline"/>
+        <TextObject Name="Text8" Top="151.2" Width="292.87" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        <TextObject Name="Text9" Left="292.95" Top="151.2" Width="425.17" Height="18.9" Text="[TeacherFio]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt, style=Underline"/>
+        <TextObject Name="Text10" Top="170.1" Width="198.37" Height="18.9" Text="Дата проведения экзамена" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        <TextObject Name="Text11" Left="207.9" Top="170.1" Width="510.22" Height="18.9" Text="[ExamDate]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt, style=Underline"/>
       </ChildBand>
     </ReportTitleBand>
-    <DataBand Name="MasterData1" Top="437.21" Width="699.3" Height="26.46" CanGrow="true" CanShrink="true">
-      <TextObject Name="Memo31" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Line#]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo36" Left="49.13" Width="177.64" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[aqRep.LastName] [aqRep.FirstName] [aqRep.middleName]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo37" Left="226.77" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Trim(&lt;aqRep.&quot;TestBookN&quot;&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo38" Left="298.58" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
-      <TextObject Name="Memo39" Left="370.39" Width="102.05" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo40" Left="472.44" Width="60.47" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo41" Left="532.91" Width="79.37" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo42" Left="612.28" Width="86.93" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <DataHeaderBand Name="Header1" Top="377.73" Width="699.3" Height="56.7">
-        <TextObject Name="Memo43" Top="3.78" Width="49.13" Height="52.91" Border.Lines="All" Text="№ п/п" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo44" Left="49.13" Top="3.78" Width="177.64" Height="52.91" Border.Lines="All" Text="Фамилия и инициалы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo45" Left="226.77" Top="3.78" Width="71.81" Height="52.91" Border.Lines="All" Text="Номер зачетной книжки" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo46" Left="298.58" Top="3.78" Width="71.81" Height="52.91" Border.Lines="All" Text="Отметка  о сдаче зачета" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo47" Left="370.39" Top="3.78" Width="102.05" Height="52.91" Border.Lines="All" Text="Подпись преподавателя и дата" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo48" Left="472.44" Top="3.78" Width="139.84" Height="30.24" Border.Lines="All" Text="Экзаменационная оценка" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo49" Left="472.44" Top="34.02" Width="60.47" Height="22.68" Border.Lines="All" Text="цифрой" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo50" Left="532.91" Top="34.02" Width="79.37" Height="22.68" Border.Lines="All" Text="прописью" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo51" Left="612.28" Top="3.78" Width="86.93" Height="52.91" Border.Lines="All" Text="Подпись экзаменатора" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
+    <DataBand Name="Data1" Top="388.21" Width="718.2" Height="47.25" CanGrow="true" CanBreak="true" DataSource="Examinees">
+      <TableObject Name="Table2" Left="9.45" Width="699.3" Height="47.25" Border.Lines="Bottom" GrowToBottom="true">
+        <TableColumn Name="Column6" Width="56.7"/>
+        <TableColumn Name="Column7" Width="141.75"/>
+        <TableColumn Name="Column8" Width="122.85"/>
+        <TableColumn Name="Column9" Width="151.2"/>
+        <TableColumn Name="Column10" Width="226.8"/>
+        <TableRow Name="Row3" Height="47.25">
+          <TableCell Name="Cell11" Border.Lines="All" Text="[Row#]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt" TabWidth="60"/>
+          <TableCell Name="Cell12" Border.Lines="All" Text="[Examinees.FullName]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
+          <TableCell Name="Cell13" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
+          <TableCell Name="Cell14" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
+          <TableCell Name="Cell15" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="319.29" Width="718.2" Height="66.15">
+        <TableObject Name="Table1" Left="9.45" Width="699.3" Height="66.15" Border.Lines="Bottom">
+          <TableColumn Name="Column1" Width="56.7"/>
+          <TableColumn Name="Column2" Width="141.75"/>
+          <TableColumn Name="Column3" Width="122.85"/>
+          <TableColumn Name="Column4" Width="151.2"/>
+          <TableColumn Name="Column5" Width="226.8"/>
+          <TableRow Name="Row1" Height="47.25">
+            <TableCell Name="Cell1" Border.Lines="All" Text="№ п/п" HorzAlign="Center" Font="Times New Roman, 12pt" RowSpan="2"/>
+            <TableCell Name="Cell2" Border.Lines="All" Text="Фамилия и инициалы" HorzAlign="Center" Font="Times New Roman, 12pt" RowSpan="2"/>
+            <TableCell Name="Cell3" Border.Lines="All" Text="Экзаменационная оценка" HorzAlign="Center" Font="Times New Roman, 12pt" ColSpan="2"/>
+            <TableCell Name="Cell4" Border.Lines="All" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+            <TableCell Name="Cell5" Border.Lines="All" Text="Подпись экзаменатора" HorzAlign="Center" Font="Times New Roman, 12pt" RowSpan="2"/>
+          </TableRow>
+          <TableRow Name="Row2">
+            <TableCell Name="Cell6" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt"/>
+            <TableCell Name="Cell7" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt"/>
+            <TableCell Name="Cell8" Border.Lines="All" Text="Цифрой" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+            <TableCell Name="Cell9" Border.Lines="All" Text="Прописью" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+            <TableCell Name="Cell10" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt"/>
+          </TableRow>
+        </TableObject>
       </DataHeaderBand>
     </DataBand>
-    <ReportSummaryBand Name="ReportSummary1" Top="466.45" Width="699.3" Height="343.94">
-      <TextObject Name="Memo32" Left="64.25" Top="188.98" Width="249.45" Height="49.13" CanGrow="true" CanShrink="true" Text="Декан [aqRep.RoditName]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo33" Left="525.35" Top="192.76" Width="117.17" Height="18.9" Text="[aqRep.Dean]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo34" Left="64.25" Top="260.79" Width="109.61" Height="18.9" Text="Запрещается:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo35" Left="188.98" Top="260.79" Width="510.24" Height="56.69" Text="1. Принимать экзамены от студентов, не внесенных в данную ведомость.&#13;&#10;2. Принимать экзамены в сроки, не установленные утвержденным расписанием, кроме случаев, специально разрешенных деканом." Padding="2, 1, 2, 1" HorzAlign="Justify" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo1" Left="64.25" Top="15.12" Width="309.92" Height="18.9" Text="Число студентов на [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeExCode&gt;='1','экзамене','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёте с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line1" Left="336.38" Top="34.02" Width="302.36" Border.Width="2"/>
-      <TextObject Name="Memo25" Left="113.39" Top="34.02" Width="328.82" Height="18.9" Text="Из них получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)  or (&lt;TypeExCode&gt;=2) ,'&quot;отлично&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line2" Left="411.97" Top="52.91" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo26" Left="166.3" Top="52.91" Width="275.91" Height="18.9" Text="получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)   or (&lt;TypeExCode&gt;=2),'&quot;хорошо&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;не зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line3" Left="411.97" Top="71.81" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo27" Left="166.3" Top="71.81" Width="241.89" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)   or (&lt;TypeExCode&gt;=2),'получивших &quot;удовлетворительно&quot;','')][IIF(&lt;TypeExCode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line4" Left="411.97" Top="90.71" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo28" Left="166.3" Top="90.71" Width="257.01" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)   or (&lt;TypeExCode&gt;=2),'получивших &quot;неудовлетворительно&quot;','')][IIF(&lt;TypeExcode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line5" Left="411.97" Top="109.61" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo29" Left="60.47" Top="109.61" Width="400.63" Height="18.9" Text="Число студентов, не явившихся на [IIF(&lt;TypeExCode&gt;='0',' зачёт','')][IIF(&lt;TypeExCode&gt;='1','экзамен','')][IIF(&lt;TypeExCode&gt;='2','курсовую работу','')][IIF(&lt;TypeExCode&gt;='3','учебную практику','')][IIF(&lt;TypeExCode&gt;='4','производственную практику','')][IIF(&lt;TypeExCode&gt;='8','зачёт с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line6" Left="411.97" Top="128.5" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo30" Left="60.47" Top="128.5" Width="423.31" Height="18.9" Text="Число студентов, не допущенных к [IIF(&lt;TypeExCode&gt;='0','зачёту','')][IIF(&lt;TypeExCode&gt;='1','экзамену','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёту с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line7" Left="411.97" Top="147.4" Width="226.77" Border.Width="2"/>
-    </ReportSummaryBand>
-  </ReportPage>
-  <ReportPage Name="VedomostZO" LeftMargin="15" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle2" Height="105.83">
-      <TextObject Name="Memo57" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого)" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <ChildBand Name="Child2" Height="170.08">
-        <TextObject Name="Memo86" Left="11.34" Width="680.32" Height="18.9" Text="[form_ob]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo87" Left="11.34" Top="37.8" Width="680.32" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo88" Left="11.34" Top="75.59" Width="64.25" Height="18.9" Text="Семестр" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo89" Left="79.37" Top="75.59" Width="26.46" Height="18.9" Text="[IIF(&lt;semestr&gt;&gt;10,&lt;semestr&gt;-10,&lt;semestr&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo90" Left="113.39" Top="75.59" Width="177.64" Height="18.9" Text="[IIF(MonthOf(Date)&gt;=9,IntToStr(YearOf(Date))+'-'+IntToStr(YearOf(Date)+1),IntToStr(YearOf(Date)-1)+'-'+IntToStr(YearOf(Date)))] учебного года" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo91" Left="11.34" Top="94.49" Width="128.5" Height="18.9" Text="Форма контроля:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo92" Left="147.4" Top="94.49" Width="102.05" Height="18.9" Text="[IIF(&lt;TypeExCode&gt;=1,'Экзамен',IIF(&lt;TypeExCode&gt;=0,'Зачёт',IIF(&lt;TypeExCode&gt;=2,'Курсовая работа',IIF(&lt;TypeExCode&gt;=3,'Учеб. практика',IIF(&lt;TypeExCode&gt;=4,'Произв. практика',IIF(&lt;TypeExCode&gt;=8,'Зачёт с оценкой',''))))))]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo93" Left="11.34" Top="113.39" Width="359.06" Height="18.9" Text="Кол-во часов, проставляемых в зачетную книжку - " Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo94" Left="374.17" Top="113.39" Width="113.39" Height="18.9" Text="[hours] [typehours]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo95" Left="11.34" Top="132.28" Width="94.49" Height="18.9" Text="[aqRep.FacultyName]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo96" Left="11.34" Top="151.18" Width="60.47" Height="18.9" Text="Группа" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo97" Left="75.59" Top="151.18" Width="83.15" Height="18.9" Text="&quot;[Trim(&lt;aqRep.&quot;new_group&quot;&gt;)]&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo98" Left="158.74" Top="151.18" Width="37.8" Height="18.9" Text="курс" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo99" Left="200.32" Top="151.18" Width="34.02" Height="18.9" Text="[aqRep.kurs]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <ChildBand Name="Child8" Height="22.68" CanGrow="true" CanShrink="true">
-          <TextObject Name="Memo100" Left="11.34" Width="98.27" Height="18.9" Text="Дисциплина" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-          <TextObject Name="Memo101" Left="117.17" Width="582.05" Height="18.9" GrowToBottom="true" Text="[subject]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-          <ChildBand Name="Child9" Height="64.25">
-            <TextObject Name="Memo102" Left="11.34" Width="283.46" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-            <TextObject Name="Memo103" Left="294.8" Width="404.41" Height="18.9" Border.Lines="Bottom" Text="[teach]" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo104" Left="11.34" Top="18.9" Width="687.87" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo105" Left="11.34" Top="45.35" Width="291.02" Height="18.9" Text="Дата проведения [IIF(&lt;TypeExCode&gt;='0','зачёта','')][IIF(&lt;TypeExCode&gt;='1','экзамена','')][IIF(&lt;TypeExCode&gt;='2','курсовой работы','')][IIF(&lt;TypeExCode&gt;='3','учебной практики','')][IIF(&lt;TypeExCode&gt;='4','производственной практики','')] [EstimDatePrint]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-          </ChildBand>
-        </ChildBand>
-      </ChildBand>
-    </ReportTitleBand>
-    <DataBand Name="MasterData2" Height="26.46" CanGrow="true" CanShrink="true">
-      <TextObject Name="Memo58" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Line#]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo59" Left="49.13" Width="177.64" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[aqRep.LastName] [aqRep.FirstName] [aqRep.middleName]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo60" Left="226.77" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Trim(&lt;aqRep.&quot;TestBookN&quot;&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo61" Left="298.58" Width="60.47" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
-      <TextObject Name="Memo62" Left="359.06" Width="60.47" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo63" Left="419.53" Width="60.47" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo64" Left="480" Width="64.25" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo65" Left="544.25" Width="75.59" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo80" Left="619.84" Width="79.37" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <DataHeaderBand Name="Header2" Height="56.69">
-        <TextObject Name="Memo77" Top="3.78" Width="49.13" Height="52.91" Border.Lines="All" Text="№ п/п" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo78" Left="49.13" Top="3.78" Width="177.64" Height="52.91" Border.Lines="All" Text="Фамилия и инициалы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo79" Left="226.77" Top="3.78" Width="71.81" Height="52.91" Border.Lines="All" Text="Номер зачетной книжки" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo24" Left="419.53" Top="3.78" Width="60.47" Height="52.91" Border.Lines="All" Text="Отметка  о сдаче зачета" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo52" Left="480" Top="3.78" Width="64.25" Height="52.91" Border.Lines="All" Text="Подпись преподавателя и дата" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo53" Left="544.25" Top="3.78" Width="75.59" Height="52.91" Border.Lines="All" Text="Экзаменационная оценка прописью" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo54" Left="619.84" Top="3.78" Width="79.37" Height="52.91" Border.Lines="All" Text="Подпись экзаменатора" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo55" Left="298.58" Top="3.78" Width="60.47" Height="52.91" Border.Lines="All" Text="Отметка  о сдаче контрольной работы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt, style=Bold"/>
-        <TextObject Name="Memo56" Left="359.06" Top="3.78" Width="60.47" Height="52.91" Border.Lines="All" Text="Подпись преподавателя" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-      </DataHeaderBand>
-    </DataBand>
-    <ReportSummaryBand Name="ReportSummary2" Height="343.94">
-      <LineObject Name="Line14" Left="415.75" Top="154.96" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo73" Left="64.25" Top="188.98" Width="249.45" Height="49.13" CanGrow="true" CanShrink="true" Text="Декан [aqRep.RoditName]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo74" Left="525.35" Top="192.76" Width="117.17" Height="18.9" Text="[aqRep.Dean]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo75" Left="64.25" Top="260.79" Width="109.61" Height="18.9" Text="Запрещается:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo76" Left="188.98" Top="260.79" Width="510.24" Height="56.69" Text="1. Принимать экзамены от студентов, не внесенных в данную ведомость.&#13;&#10;2. Принимать экзамены в сроки, не установленные утвержденным расписанием, кроме случаев, специально разрешенных деканом." Padding="2, 1, 2, 1" HorzAlign="Justify" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo66" Left="68.03" Top="11.34" Width="309.92" Height="18.9" Text="Число студентов на [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeExCode&gt;='1','экзамене','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёте с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line8" Left="340.16" Top="30.24" Width="302.36" Border.Width="2"/>
-      <TextObject Name="Memo67" Left="117.17" Top="30.24" Width="328.82" Height="18.9" Text="Из них получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'&quot;отлично&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line9" Left="415.75" Top="49.13" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo68" Left="170.08" Top="49.13" Width="275.91" Height="18.9" Text="получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'&quot;хорошо&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;не зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line10" Left="415.75" Top="68.03" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo69" Left="170.08" Top="68.03" Width="241.89" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'получивших &quot;удовлетворительно&quot;','')][IIF(&lt;TypeExCode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line11" Left="415.75" Top="86.93" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo70" Left="170.08" Top="86.93" Width="257.01" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'получивших &quot;неудовлетворительно&quot;','')][IIF(&lt;TypeExcode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line12" Left="415.75" Top="105.83" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo71" Left="64.25" Top="105.83" Width="400.63" Height="18.9" Text="Число студентов, не явившихся на [IIF(&lt;TypeExCode&gt;='0',' зачёт','')][IIF(&lt;TypeExCode&gt;='1','экзамен','')][IIF(&lt;TypeExCode&gt;='2','курсовую работу','')][IIF(&lt;TypeExCode&gt;='3','учебную практику','')][IIF(&lt;TypeExCode&gt;='4','производственную практику','')][IIF(&lt;TypeExCode&gt;='8','зачёт с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line13" Left="415.75" Top="124.72" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo72" Left="64.25" Top="124.72" Width="423.31" Height="18.9" Text="Число студентов, не допущенных к [IIF(&lt;TypeExCode&gt;='0','зачёту','')][IIF(&lt;TypeExCode&gt;='1','экзамену','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёту с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line36" Left="415.75" Top="143.62" Width="226.77" Border.Width="2"/>
-    </ReportSummaryBand>
-  </ReportPage>
-  <ReportPage Name="VedomostFGOS" LeftMargin="15" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle3" Height="105.83">
-      <TextObject Name="Memo114" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого)" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <ChildBand Name="Child3" Height="170.08">
-        <TextObject Name="Memo136" Left="11.34" Width="680.32" Height="18.9" Text="[form_ob]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo137" Left="11.34" Top="37.8" Width="680.32" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo138" Left="11.34" Top="75.59" Width="64.25" Height="18.9" Text="Семестр" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo139" Left="79.37" Top="75.59" Width="26.46" Height="18.9" Text="[IIF(&lt;semestr&gt;&gt;10,&lt;semestr&gt;-10,&lt;semestr&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo140" Left="113.39" Top="75.59" Width="177.64" Height="18.9" Text="[IIF(MonthOf(Date)&gt;=9,IntToStr(YearOf(Date))+'-'+IntToStr(YearOf(Date)+1),IntToStr(YearOf(Date)-1)+'-'+IntToStr(YearOf(Date)))] учебного года" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo141" Left="11.34" Top="94.49" Width="128.5" Height="18.9" Text="Форма контроля:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo142" Left="147.4" Top="94.49" Width="102.05" Height="18.9" Text="[IIF(&lt;TypeExCode&gt;=1,'Экзамен',IIF(&lt;TypeExCode&gt;=0,'Зачёт',IIF(&lt;TypeExCode&gt;=2,'Курсовая работа',IIF(&lt;TypeExCode&gt;=3,'Учеб. практика',IIF(&lt;TypeExCode&gt;=4,'Произв. практика',IIF(&lt;TypeExCode&gt;=8,'Зачёт с оценкой',''))))))]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo143" Left="11.34" Top="113.39" Width="302.36" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;=1,'Общее количество часов/зачетных единиц','Количество зачетных единиц - ')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo144" Left="332.6" Top="113.39" Width="113.39" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;&lt;=2,IntToStr(&lt;Hours&gt;*36)+' / '+IntToStr(&lt;Hours&gt;),&lt;Hours&gt;)]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo145" Left="11.34" Top="132.28" Width="94.49" Height="18.9" Text="[aqRep.FacultyName]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo146" Left="11.34" Top="151.18" Width="60.47" Height="18.9" Text="Группа" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo147" Left="75.59" Top="151.18" Width="83.15" Height="18.9" Text="&quot;[Trim(&lt;aqRep.&quot;new_group&quot;&gt;)]&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo148" Left="158.74" Top="151.18" Width="37.8" Height="18.9" Text="курс" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo149" Left="200.32" Top="151.18" Width="34.02" Height="18.9" Text="[aqRep.kurs]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <ChildBand Name="Child10" Height="22.68" CanGrow="true" CanShrink="true">
-          <TextObject Name="Memo150" Left="11.34" Width="98.27" Height="18.9" Text="Дисциплина" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-          <TextObject Name="Memo151" Left="117.17" Width="582.05" Height="18.9" GrowToBottom="true" Text="[subject]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-          <ChildBand Name="Child11" Height="64.25">
-            <TextObject Name="Memo152" Left="11.34" Width="283.46" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-            <TextObject Name="Memo153" Left="294.8" Width="404.41" Height="18.9" Border.Lines="Bottom" Text="[teach]" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo154" Left="11.34" Top="18.9" Width="687.87" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo155" Left="11.34" Top="45.35" Width="291.02" Height="18.9" Text="Дата проведения [IIF(&lt;TypeExCode&gt;='0','зачёта','')][IIF(&lt;TypeExCode&gt;='1','экзамена','')][IIF(&lt;TypeExCode&gt;='2','курсовой работы','')][IIF(&lt;TypeExCode&gt;='3','учебной практики','')][IIF(&lt;TypeExCode&gt;='4','производственной практики','')] [EstimDatePrint]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-          </ChildBand>
-        </ChildBand>
-      </ChildBand>
-    </ReportTitleBand>
-    <DataBand Name="MasterData3" Height="26.46" CanGrow="true" CanShrink="true">
-      <TextObject Name="Memo156" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Line#]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo157" Left="49.13" Width="177.64" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[aqRep.LastName] [aqRep.FirstName] [aqRep.middleName]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo158" Left="226.77" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Trim(&lt;aqRep.&quot;TestBookN&quot;&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo160" Left="298.58" Width="75.59" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
-      <TextObject Name="Memo161" Left="374.17" Width="64.25" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo162" Left="438.43" Width="60.47" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo163" Left="498.9" Width="94.49" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo164" Left="593.39" Width="105.83" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <DataHeaderBand Name="Header3" Height="98.27">
-        <TextObject Name="Memo127" Top="3.78" Width="49.13" Height="94.49" Border.Lines="All" Text="№ п/п" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo128" Left="49.13" Top="3.78" Width="177.64" Height="94.49" Border.Lines="All" Text="Фамилия и инициалы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo129" Left="226.77" Top="3.78" Width="71.81" Height="94.49" Border.Lines="All" Text="Номер зачетной книжки" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo130" Left="298.58" Top="56.69" Width="75.59" Height="41.57" Border.Lines="All" Text="По итогам текущей аттестации" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo131" Left="298.58" Top="3.78" Width="200.32" Height="52.91" Border.Lines="All" Text="Кол-во баллов в соответствии с БРС" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo132" Left="498.9" Top="3.78" Width="200.32" Height="30.24" Border.Lines="All" Text="[IIF(&lt;TypeexCode&gt;='0','Отметка на зачёте','')][IIF(&lt;TypeexCode&gt;='1','Оценка на экзамене','')]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo133" Left="438.43" Top="56.69" Width="60.47" Height="41.57" Border.Lines="All" Text="Итого" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo134" Left="498.9" Top="34.02" Width="94.49" Height="64.25" Border.Lines="All" Text="прописью" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo135" Left="593.39" Top="34.02" Width="105.83" Height="64.25" Border.Lines="All" Text="Дата, подпись экзаменатора" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo159" Left="374.17" Top="56.69" Width="64.25" Height="41.57" Border.Lines="All" Text="На [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeexCode&gt;='1','экзамене','')]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-      </DataHeaderBand>
-    </DataBand>
-    <ReportSummaryBand Name="ReportSummary3" Height="343.94">
-      <TextObject Name="Memo123" Left="64.25" Top="188.98" Width="249.45" Height="49.13" CanGrow="true" CanShrink="true" Text="Декан [aqRep.RoditName]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo124" Left="525.35" Top="192.76" Width="117.17" Height="18.9" Text="[aqRep.Dean]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo125" Left="64.25" Top="260.79" Width="109.61" Height="18.9" Text="Запрещается:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo126" Left="188.98" Top="260.79" Width="510.24" Height="56.69" Text="1. Принимать экзамены от студентов, не внесенных в данную ведомость.&#13;&#10;2. Принимать экзамены в сроки, не установленные утвержденным расписанием, кроме случаев, специально разрешенных деканом." Padding="2, 1, 2, 1" HorzAlign="Justify" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo116" Left="64.25" Top="7.56" Width="309.92" Height="18.9" Text="Число студентов на [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeExCode&gt;='1','экзамене','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёте с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line15" Left="336.38" Top="26.46" Width="302.36" Border.Width="2"/>
-      <TextObject Name="Memo117" Left="113.39" Top="26.46" Width="328.82" Height="18.9" Text="Из них получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)   or (&lt;TypeExCode&gt;=2),'&quot;отлично&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line16" Left="411.97" Top="45.35" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo118" Left="166.3" Top="45.35" Width="275.91" Height="18.9" Text="получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)  or (&lt;TypeExCode&gt;=2),'&quot;хорошо&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;не зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line17" Left="411.97" Top="64.25" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo119" Left="166.3" Top="64.25" Width="241.89" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)  or (&lt;TypeExCode&gt;=2),'получивших &quot;удовлетворительно&quot;','')][IIF(&lt;TypeExCode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line18" Left="411.97" Top="83.15" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo120" Left="166.3" Top="83.15" Width="257.01" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8)  or (&lt;TypeExCode&gt;=2),'получивших &quot;неудовлетворительно&quot;','')][IIF(&lt;TypeExcode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line19" Left="411.97" Top="102.05" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo121" Left="60.47" Top="102.05" Width="400.63" Height="18.9" Text="Число студентов, не явившихся на [IIF(&lt;TypeExCode&gt;='0',' зачёт','')][IIF(&lt;TypeExCode&gt;='1','экзамен','')][IIF(&lt;TypeExCode&gt;='2','курсовую работу','')][IIF(&lt;TypeExCode&gt;='3','учебную практику','')][IIF(&lt;TypeExCode&gt;='4','производственную практику','')][IIF(&lt;TypeExCode&gt;='8','зачёт с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line20" Left="411.97" Top="120.94" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo122" Left="60.47" Top="120.94" Width="423.31" Height="18.9" Text="Число студентов, не допущенных к [IIF(&lt;TypeExCode&gt;='0','зачёту','')][IIF(&lt;TypeExCode&gt;='1','экзамену','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёту с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line21" Left="411.97" Top="139.84" Width="226.77" Border.Width="2"/>
-    </ReportSummaryBand>
-  </ReportPage>
-  <ReportPage Name="VedomostZOFGOS" LeftMargin="15" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle4" Height="105.83">
-      <TextObject Name="Memo81" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого)" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <ChildBand Name="Child4" Height="170.08">
-        <TextObject Name="Memo183" Left="11.34" Width="680.32" Height="18.9" Text="[form_ob]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo184" Left="11.34" Top="37.8" Width="680.32" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo185" Left="11.34" Top="75.59" Width="64.25" Height="18.9" Text="Семестр" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo186" Left="79.37" Top="75.59" Width="26.46" Height="18.9" Text="[IIF(&lt;semestr&gt;&gt;10,&lt;semestr&gt;-10,&lt;semestr&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo187" Left="113.39" Top="75.59" Width="177.64" Height="18.9" Text="[IIF(MonthOf(Date)&gt;=9,IntToStr(YearOf(Date))+'-'+IntToStr(YearOf(Date)+1),IntToStr(YearOf(Date)-1)+'-'+IntToStr(YearOf(Date)))] учебного года" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo188" Left="11.34" Top="94.49" Width="128.5" Height="18.9" Text="Форма контроля:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo189" Left="147.4" Top="94.49" Width="102.05" Height="18.9" Text="[IIF(&lt;TypeExCode&gt;=1,'Экзамен',IIF(&lt;TypeExCode&gt;=0,'Зачёт',IIF(&lt;TypeExCode&gt;=2,'Курсовая работа',IIF(&lt;TypeExCode&gt;=3,'Учеб. практика',IIF(&lt;TypeExCode&gt;=4,'Произв. практика',IIF(&lt;TypeExCode&gt;=8,'Зачёт с оценкой',''))))))]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo190" Left="11.34" Top="113.39" Width="328.82" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;=1,'Общее количество часов/зачетных единиц','Количество зачетных единиц - ')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo191" Left="347.72" Top="113.39" Width="113.39" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;&lt;=2,IntToStr(&lt;Hours&gt;*36)+' / '+IntToStr(&lt;Hours&gt;),&lt;Hours&gt;)]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo192" Left="11.34" Top="132.28" Width="94.49" Height="18.9" Text="[aqRep.FacultyName]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo193" Left="11.34" Top="151.18" Width="60.47" Height="18.9" Text="Группа" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo194" Left="75.59" Top="151.18" Width="83.15" Height="18.9" Text="&quot;[Trim(&lt;aqRep.&quot;new_group&quot;&gt;)]&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo195" Left="158.74" Top="151.18" Width="37.8" Height="18.9" Text="курс" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo196" Left="200.32" Top="151.18" Width="34.02" Height="18.9" Text="[aqRep.kurs]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <ChildBand Name="Child12" Height="22.68" CanGrow="true" CanShrink="true">
-          <TextObject Name="Memo197" Left="11.34" Width="98.27" Height="18.9" Text="Дисциплина" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-          <TextObject Name="Memo198" Left="117.17" Width="582.05" Height="18.9" GrowToBottom="true" Text="[subject]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-          <ChildBand Name="Child13" Height="64.25">
-            <TextObject Name="Memo199" Left="11.34" Width="283.46" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-            <TextObject Name="Memo200" Left="294.8" Width="404.41" Height="18.9" Border.Lines="Bottom" Text="[teach]" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo201" Left="11.34" Top="18.9" Width="687.87" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo202" Left="11.34" Top="45.35" Width="291.02" Height="18.9" Text="Дата проведения [IIF(&lt;TypeExCode&gt;='0','зачёта','')][IIF(&lt;TypeExCode&gt;='1','экзамена','')][IIF(&lt;TypeExCode&gt;='2','курсовой работы','')][IIF(&lt;TypeExCode&gt;='3','учебной практики','')][IIF(&lt;TypeExCode&gt;='4','производственной практики','')] [EstimDatePrint]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-          </ChildBand>
-        </ChildBand>
-      </ChildBand>
-    </ReportTitleBand>
-    <DataBand Name="MasterData4" Height="26.46" CanGrow="true" CanShrink="true">
-      <TextObject Name="Memo82" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Line#]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo83" Left="49.13" Width="177.64" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[aqRep.LastName] [aqRep.FirstName] [aqRep.middleName]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo84" Left="226.77" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Trim(&lt;aqRep.&quot;TestBookN&quot;&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo180" Left="298.58" Width="75.59" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
-      <TextObject Name="Memo181" Left="374.17" Width="52.91" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo182" Left="427.09" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo217" Left="525.35" Width="79.37" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo218" Left="604.72" Width="94.49" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo219" Left="476.22" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <DataHeaderBand Name="Header4" Height="98.27">
-        <TextObject Name="Memo174" Top="3.78" Width="49.13" Height="94.49" Border.Lines="All" Text="№ п/п" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo175" Left="49.13" Top="3.78" Width="177.64" Height="94.49" Border.Lines="All" Text="Фамилия и инициалы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo176" Left="226.77" Top="3.78" Width="71.81" Height="94.49" Border.Lines="All" Text="Номер зачетной книжки" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo85" Left="298.58" Top="56.69" Width="75.59" Height="41.57" Border.Lines="All" Text="По итогам текущей аттестации" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo107" Left="298.58" Top="3.78" Width="177.64" Height="52.91" Border.Lines="All" Text="Кол-во баллов в соответствии с БРС" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo108" Left="525.35" Top="3.78" Width="173.86" Height="30.24" Border.Lines="All" Text="[IIF(&lt;TypeExCode&gt;='0','Отметка на зачёте','')][IIF(&lt;TypeExCode&gt;='1','Оценка на экзамене','')]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo109" Left="427.09" Top="56.69" Width="49.13" Height="41.57" Border.Lines="All" Text="Итого" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo110" Left="525.35" Top="34.02" Width="79.37" Height="64.25" Border.Lines="All" Text="прописью" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo177" Left="604.72" Top="34.02" Width="94.49" Height="64.25" Border.Lines="All" Text="Дата, подпись экзаменатора" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo178" Left="374.17" Top="56.69" Width="52.91" Height="41.57" Border.Lines="All" Text="На [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeExCode&gt;='1','экзамене','')]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
-        <TextObject Name="Memo179" Left="476.22" Top="3.78" Width="49.13" Height="94.49" Border.Lines="All" GrowToBottom="true" Text="Отметка о сдаче контрольной работы (при наличии в учебном плане)" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt, style=Bold"/>
-      </DataHeaderBand>
-    </DataBand>
-    <ReportSummaryBand Name="ReportSummary4" Height="343.94">
-      <TextObject Name="Memo170" Left="64.25" Top="188.98" Width="249.45" Height="49.13" CanGrow="true" CanShrink="true" Text="Декан [aqRep.RoditName]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo171" Left="525.35" Top="192.76" Width="117.17" Height="18.9" Text="[aqRep.Dean]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo172" Left="64.25" Top="260.79" Width="109.61" Height="18.9" Text="Запрещается:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo173" Left="188.98" Top="260.79" Width="510.24" Height="56.69" Text="1. Принимать экзамены от студентов, не внесенных в данную ведомость.&#13;&#10;2. Принимать экзамены в сроки, не установленные утвержденным расписанием, кроме случаев, специально разрешенных деканом." Padding="2, 1, 2, 1" HorzAlign="Justify" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo112" Left="68.03" Top="15.12" Width="309.92" Height="18.9" Text="Число студентов на [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeExCode&gt;='1','экзамене','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёте с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line22" Left="340.16" Top="34.02" Width="302.36" Border.Width="2"/>
-      <TextObject Name="Memo113" Left="117.17" Top="34.02" Width="328.82" Height="18.9" Text="Из них получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'&quot;отлично&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line23" Left="415.75" Top="52.91" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo165" Left="170.08" Top="52.91" Width="275.91" Height="18.9" Text="получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'&quot;хорошо&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;не зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line24" Left="415.75" Top="71.81" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo166" Left="170.08" Top="71.81" Width="241.89" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'получивших &quot;удовлетворительно&quot;','')][IIF(&lt;TypeExCode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line25" Left="415.75" Top="90.71" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo167" Left="170.08" Top="90.71" Width="257.01" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'получивших &quot;неудовлетворительно&quot;','')][IIF(&lt;TypeExcode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line26" Left="415.75" Top="109.61" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo168" Left="64.25" Top="109.61" Width="400.63" Height="18.9" Text="Число студентов, не явившихся на [IIF(&lt;TypeExCode&gt;='0',' зачёт','')][IIF(&lt;TypeExCode&gt;='1','экзамен','')][IIF(&lt;TypeExCode&gt;='2','курсовую работу','')][IIF(&lt;TypeExCode&gt;='3','учебную практику','')][IIF(&lt;TypeExCode&gt;='4','производственную практику','')][IIF(&lt;TypeExCode&gt;='8','зачёт с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line27" Left="415.75" Top="128.5" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo169" Left="64.25" Top="128.5" Width="423.31" Height="18.9" Text="Число студентов, не допущенных к [IIF(&lt;TypeExCode&gt;='0','зачёту','')][IIF(&lt;TypeExCode&gt;='1','экзамену','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёту с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line28" Left="415.75" Top="147.4" Width="226.77" Border.Width="2"/>
-    </ReportSummaryBand>
-  </ReportPage>
-  <ReportPage Name="VedomostFGOsMagistr" LeftMargin="15" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle5" Height="105.83">
-      <TextObject Name="Memo203" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого)" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <ChildBand Name="Child5" Height="170.08">
-        <TextObject Name="Memo229" Left="11.34" Width="680.32" Height="18.9" Text="[form_ob]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo230" Left="11.34" Top="37.8" Width="680.32" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo231" Left="11.34" Top="75.59" Width="64.25" Height="18.9" Text="Семестр" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo232" Left="79.37" Top="75.59" Width="26.46" Height="18.9" Text="[IIF(&lt;semestr&gt;&gt;10,&lt;semestr&gt;-10,&lt;semestr&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo233" Left="113.39" Top="75.59" Width="177.64" Height="18.9" Text="[IIF(MonthOf(Date)&gt;=9,IntToStr(YearOf(Date))+'-'+IntToStr(YearOf(Date)+1),IntToStr(YearOf(Date)-1)+'-'+IntToStr(YearOf(Date)))] учебного года" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo234" Left="11.34" Top="94.49" Width="128.5" Height="18.9" Text="Форма контроля:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo235" Left="147.4" Top="94.49" Width="102.05" Height="18.9" Text="[IIF(&lt;TypeExCode&gt;=1,'Экзамен',IIF(&lt;TypeExCode&gt;=0,'Зачёт',IIF(&lt;TypeExCode&gt;=2,'Курсовая работа',IIF(&lt;TypeExCode&gt;=3,'Учеб. практика',IIF(&lt;TypeExCode&gt;=4,'Произв. практика',IIF(&lt;TypeExCode&gt;=8,'Зачёт с оценкой',''))))))]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo236" Left="11.34" Top="113.39" Width="325.04" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;=1,'Общее количество часов/зачетных единиц','Количество зачетных единиц - ')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo237" Left="351.5" Top="113.39" Width="113.39" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;&lt;=2,IntToStr(&lt;Hours&gt;*36)+' / '+IntToStr(&lt;Hours&gt;),&lt;Hours&gt;)]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo238" Left="11.34" Top="132.28" Width="94.49" Height="18.9" Text="[aqRep.FacultyName]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo239" Left="11.34" Top="151.18" Width="60.47" Height="18.9" Text="Группа" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo240" Left="75.59" Top="151.18" Width="83.15" Height="18.9" Text="&quot;[Trim(&lt;aqRep.&quot;new_group&quot;&gt;)]&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo241" Left="158.74" Top="151.18" Width="37.8" Height="18.9" Text="курс" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo242" Left="200.32" Top="151.18" Width="34.02" Height="18.9" Text="[aqRep.kurs]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <ChildBand Name="Child15" Height="22.68">
-          <TextObject Name="Memo243" Left="11.34" Width="98.27" Height="18.9" Text="Дисциплина" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-          <TextObject Name="Memo244" Left="117.17" Width="582.05" Height="18.9" GrowToBottom="true" Text="[subject]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-          <ChildBand Name="Child14" Height="64.25">
-            <TextObject Name="Memo245" Left="11.34" Width="283.46" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-            <TextObject Name="Memo246" Left="294.8" Width="404.41" Height="18.9" Border.Lines="Bottom" Text="[teach]" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo247" Left="11.34" Top="18.9" Width="687.87" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo248" Left="11.34" Top="45.35" Width="291.02" Height="18.9" Text="Дата проведения [IIF(&lt;TypeExCode&gt;='0','зачёта','')][IIF(&lt;TypeExCode&gt;='1','экзамена','')][IIF(&lt;TypeExCode&gt;='2','курсовой работы','')][IIF(&lt;TypeExCode&gt;='3','учебной практики','')][IIF(&lt;TypeExCode&gt;='4','производственной практики','')] [EstimDatePrint]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-          </ChildBand>
-        </ChildBand>
-      </ChildBand>
-    </ReportTitleBand>
-    <DataBand Name="MasterData5" Height="26.46" CanGrow="true" CanShrink="true">
-      <TextObject Name="Memo249" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Line#]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo250" Left="49.13" Width="230.55" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[aqRep.LastName] [aqRep.FirstName] [aqRep.middleName]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo251" Left="279.69" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Trim(&lt;aqRep.&quot;TestBookN&quot;&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo255" Left="351.5" Width="158.74" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo256" Left="510.24" Width="188.98" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <DataHeaderBand Name="Header5" Height="98.27">
-        <TextObject Name="Memo216" Top="3.78" Width="49.13" Height="94.49" Border.Lines="All" Text="№ п/п" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo220" Left="49.13" Top="3.78" Width="230.55" Height="94.49" Border.Lines="All" Text="Фамилия и инициалы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo221" Left="279.69" Top="3.78" Width="71.81" Height="94.49" Border.Lines="All" Text="Номер зачетной книжки" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo224" Left="351.5" Top="3.78" Width="347.72" Height="30.24" Border.Lines="All" Text="[IIF(&lt;TypeexCode&gt;='0','Отметка на зачёте','')][IIF(&lt;TypeexCode&gt;='1','Оценка на экзамене','')]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo226" Left="351.5" Top="34.02" Width="158.74" Height="64.25" Border.Lines="All" Text="прописью" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo227" Left="510.24" Top="34.02" Width="188.98" Height="64.25" Border.Lines="All" Text="Дата, подпись экзаменатора" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-      </DataHeaderBand>
-    </DataBand>
-    <ReportSummaryBand Name="ReportSummary5" Height="343.94">
-      <TextObject Name="Memo212" Left="64.25" Top="188.98" Width="249.45" Height="49.13" CanGrow="true" CanShrink="true" Text="Декан [aqRep.RoditName]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo213" Left="525.35" Top="192.76" Width="117.17" Height="18.9" Text="[aqRep.Dean]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo214" Left="64.25" Top="260.79" Width="109.61" Height="18.9" Text="Запрещается:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo215" Left="188.98" Top="260.79" Width="510.24" Height="56.69" Text="1. Принимать экзамены от студентов, не внесенных в данную ведомость.&#13;&#10;2. Принимать экзамены в сроки, не установленные утвержденным расписанием, кроме случаев, специально разрешенных деканом." Padding="2, 1, 2, 1" HorzAlign="Justify" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo205" Left="68.03" Top="11.34" Width="309.92" Height="18.9" Text="Число студентов на [IIF(&lt;TypeExCode&gt;='0','зачёте','')][IIF(&lt;TypeExCode&gt;='1','экзамене','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёте с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line29" Left="340.16" Top="30.24" Width="302.36" Border.Width="2"/>
-      <TextObject Name="Memo206" Left="117.17" Top="30.24" Width="328.82" Height="18.9" Text="Из них получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'&quot;отлично&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line30" Left="415.75" Top="49.13" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo207" Left="170.08" Top="49.13" Width="275.91" Height="18.9" Text="получивших [IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'&quot;хорошо&quot;','')][IIF(&lt;TypeExCode&gt;='0','отметку &quot;не зачтено&quot;','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line31" Left="415.75" Top="68.03" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo208" Left="170.08" Top="68.03" Width="241.89" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'получивших &quot;удовлетворительно&quot;','')][IIF(&lt;TypeExCode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line32" Left="415.75" Top="86.93" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo209" Left="170.08" Top="86.93" Width="257.01" Height="18.9" Text="[IIF((&lt;TypeExCode&gt;=1) or (&lt;TypeExCode&gt;=8),'получивших &quot;неудовлетворительно&quot;','')][IIF(&lt;TypeExcode&gt;='0','','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line33" Left="415.75" Top="105.83" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo210" Left="64.25" Top="105.83" Width="400.63" Height="18.9" Text="Число студентов, не явившихся на [IIF(&lt;TypeExCode&gt;='0',' зачёт','')][IIF(&lt;TypeExCode&gt;='1','экзамен','')][IIF(&lt;TypeExCode&gt;='2','курсовую работу','')][IIF(&lt;TypeExCode&gt;='3','учебную практику','')][IIF(&lt;TypeExCode&gt;='4','производственную практику','')][IIF(&lt;TypeExCode&gt;='8','зачёт с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line34" Left="415.75" Top="124.72" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo211" Left="64.25" Top="124.72" Width="423.31" Height="18.9" Text="Число студентов, не допущенных к [IIF(&lt;TypeExCode&gt;='0','зачёту','')][IIF(&lt;TypeExCode&gt;='1','экзамену','')][IIF(&lt;TypeExCode&gt;='2','курсовой работе','')][IIF(&lt;TypeExCode&gt;='3','учебной практике','')][IIF(&lt;TypeExCode&gt;='4','производственной практике','')][IIF(&lt;TypeExCode&gt;='8','зачёту с оценкой','')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line35" Left="415.75" Top="143.62" Width="226.77" Border.Width="2"/>
-    </ReportSummaryBand>
-  </ReportPage>
-  <ReportPage Name="VedomostFGOSVoPrakt" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle6" Height="105.83">
-      <TextObject Name="Memo222" Left="11.34" Width="680.32" Height="105.83" Text="[aqInfoVus.MinistryName]&#13;&#10;Федеральное государственное бюджетное образовательное учреждение&#13;&#10;высшего образования &#13;&#10;«Тульский государственный педагогический университет им. Л.Н. Толстого»&#13;&#10;(ТГПУ  им. Л.Н.Толстого)" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <ChildBand Name="Child16" Height="170.08">
-        <TextObject Name="Memo273" Left="11.34" Width="680.32" Height="18.9" Text="[form_ob]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo274" Left="11.34" Top="37.8" Width="680.32" Height="18.9" Text="ЗАЧЕТНО-ЭКЗАМЕНАЦИОННАЯ ВЕДОМОСТЬ №_____" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo275" Left="11.34" Top="75.59" Width="64.25" Height="18.9" Text="Семестр" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo276" Left="79.37" Top="75.59" Width="26.46" Height="18.9" Text="[IIF(&lt;semestr&gt;&gt;10,&lt;semestr&gt;-10,&lt;semestr&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo277" Left="113.39" Top="75.59" Width="177.64" Height="18.9" Text="[IIF(MonthOf(Date)&gt;=9,IntToStr(YearOf(Date))+'-'+IntToStr(YearOf(Date)+1),IntToStr(YearOf(Date)-1)+'-'+IntToStr(YearOf(Date)))] учебного года" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo278" Left="11.34" Top="94.49" Width="128.5" Height="18.9" Text="Форма контроля:" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo279" Left="147.4" Top="94.49" Width="234.33" Height="18.9" Text="Дифференцированный зачет" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo280" Left="11.34" Top="113.39" Width="302.36" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;=1,'Общее количество часов/зачетных единиц','Количество зачетных единиц - ')]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo281" Left="332.6" Top="113.39" Width="113.39" Height="18.9" Text="[IIF(&lt;aqRep.&quot;kurs&quot;&gt;&lt;=2,IntToStr(&lt;Hours&gt;*36)+' / '+IntToStr(&lt;Hours&gt;),&lt;Hours&gt;)]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo282" Left="11.34" Top="132.28" Width="94.49" Height="18.9" Text="[aqRep.FacultyName]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo283" Left="11.34" Top="151.18" Width="60.47" Height="18.9" Text="Группа" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo284" Left="75.59" Top="151.18" Width="83.15" Height="18.9" Text="&quot;[Trim(&lt;aqRep.&quot;new_group&quot;&gt;)]&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <TextObject Name="Memo285" Left="158.74" Top="151.18" Width="37.8" Height="18.9" Text="курс" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-        <TextObject Name="Memo286" Left="200.32" Top="151.18" Width="34.02" Height="18.9" Text="[aqRep.kurs]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-        <ChildBand Name="Child17" Height="22.68" CanGrow="true" CanShrink="true">
-          <TextObject Name="Memo295" Left="11.34" Width="98.27" Height="18.9" Text="Практика" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-          <TextObject Name="Memo296" Left="117.17" Width="582.05" Height="18.9" GrowToBottom="true" Text="[subject]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-          <ChildBand Name="Child18" Height="64.25">
-            <TextObject Name="Memo297" Left="11.34" Width="283.46" Height="18.9" Text="Фамилия, имя, отчество преподавателя" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-            <TextObject Name="Memo298" Left="294.8" Width="404.41" Height="18.9" Border.Lines="Bottom" Text="[teach]" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo299" Left="11.34" Top="18.9" Width="687.87" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-            <TextObject Name="Memo300" Left="11.34" Top="45.35" Width="291.02" Height="18.9" Text="Дата проведения контроля [EstimDatePrint]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt"/>
-          </ChildBand>
-        </ChildBand>
-      </ChildBand>
-    </ReportTitleBand>
-    <DataBand Name="MasterData6" Height="26.46" CanGrow="true" CanShrink="true">
-      <TextObject Name="Memo287" Width="49.13" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Line#]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo288" Left="49.13" Width="226.77" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[aqRep.LastName] [aqRep.FirstName] [aqRep.middleName]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo289" Left="275.91" Width="71.81" Height="26.46" Border.Lines="All" GrowToBottom="true" Text="[Trim(&lt;aqRep.&quot;TestBookN&quot;&gt;)]" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
-      <TextObject Name="Memo290" Left="347.72" Width="113.39" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
-      <TextObject Name="Memo293" Left="461.1" Width="124.72" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <TextObject Name="Memo294" Left="585.83" Width="113.39" Height="26.46" Border.Lines="All" GrowToBottom="true" Padding="2, 1, 2, 1" Font="Arial, 10pt"/>
-      <DataHeaderBand Name="Header6" Height="68.03">
-        <TextObject Name="Memo263" Top="3.78" Width="49.13" Height="64.25" Border.Lines="All" Text="№ п/п" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo264" Left="49.13" Top="3.78" Width="226.77" Height="64.25" Border.Lines="All" Text="Фамилия и инициалы" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo265" Left="275.91" Top="3.78" Width="71.81" Height="64.25" Border.Lines="All" Text="Номер зачетной книжки" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo267" Left="347.72" Top="3.78" Width="113.39" Height="64.25" Border.Lines="All" Text="Кол-во баллов в соответствии с БРС" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-        <TextObject Name="Memo270" Left="461.1" Top="3.78" Width="124.72" Height="64.25" Border.Lines="All" Text="Оценка прописью" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
-        <TextObject Name="Memo271" Left="585.83" Top="3.78" Width="113.39" Height="64.25" Border.Lines="All" Text="Подпись экзаменатора" Padding="2, 1, 2, 1" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold"/>
-      </DataHeaderBand>
-    </DataBand>
-    <ReportSummaryBand Name="ReportSummary6" Height="343.94">
-      <TextObject Name="Memo225" Left="64.25" Top="188.98" Width="249.45" Height="49.13" CanGrow="true" CanShrink="true" Text="Декан [aqRep.RoditName]" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo228" Left="525.35" Top="192.76" Width="117.17" Height="18.9" Text="[aqRep.Dean]" Padding="2, 1, 2, 1" AutoWidth="true" Font="Times New Roman, 12pt, style=Bold"/>
-      <TextObject Name="Memo253" Left="64.25" Top="260.79" Width="634.96" Height="56.69" Text="Запрещается проводить контрольные мероприятия со студентами, не внесенными в данную ведомость." Padding="2, 1, 2, 1" HorzAlign="Justify" Font="Times New Roman, 12pt"/>
-      <TextObject Name="Memo254" Left="64.25" Top="7.56" Width="309.92" Height="18.9" Text="Число студентов на практике" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line37" Left="336.38" Top="26.46" Width="302.36" Border.Width="2"/>
-      <TextObject Name="Memo257" Left="98.27" Top="26.46" Width="151.18" Height="18.9" Text="Из них получивших: '&quot;отлично&quot;'" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line38" Left="411.97" Top="45.35" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo258" Left="257.01" Top="45.35" Width="162.52" Height="18.9" Text="&quot;хорошо&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line39" Left="411.97" Top="64.25" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo259" Left="257.01" Top="64.25" Width="162.52" Height="18.9" Text="&quot;удовлетворительно&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line40" Left="411.97" Top="83.15" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo260" Left="257.01" Top="83.15" Width="162.52" Height="18.9" Text="&quot;неудовлетворительно&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line41" Left="411.97" Top="102.05" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo261" Left="60.47" Top="102.05" Width="359.06" Height="18.9" Text="Число студентов, не явившихся на практику" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line42" Left="411.97" Top="120.94" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo262" Left="60.47" Top="120.94" Width="359.06" Height="18.9" Text="Число студентов, не допущенных к практике" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
-      <LineObject Name="Line43" Left="411.97" Top="139.84" Width="226.77" Border.Width="2"/>
-      <TextObject Name="Memo223" Left="257.01" Top="26.46" Width="162.52" Height="18.9" Text="&quot;отлично&quot;" Padding="2, 1, 2, 1" Font="Times New Roman, 12pt"/>
+    <ReportSummaryBand Name="ReportSummary1" Top="438.24" Width="718.2" Height="217.35">
+      <TextObject Name="Text12" Top="9.45" Width="273.97" Height="18.9" Text="Число слушателей на экзамене" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text13" Left="274.05" Top="9.45" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text14" Left="103.95" Top="28.35" Width="66.07" Height="18.9" Text="Из них:" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text15" Top="47.25" Width="273.97" Height="18.9" Text="получивших «отлично»" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text16" Left="274.05" Top="47.25" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text17" Top="66.15" Width="273.97" Height="18.9" Text="получивших «хорошо»" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text18" Left="274.05" Top="66.15" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text19" Top="85.05" Width="273.97" Height="18.9" Text="получивших «удовлетворительно»" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text20" Left="274.05" Top="85.05" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text21" Top="103.95" Width="273.97" Height="18.9" Text="получивших «неудовлетворительно»" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text22" Left="274.05" Top="103.95" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text23" Top="122.85" Width="340.12" Height="18.9" Text="Число слушателей, не явившихся на экзамен" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text24" Left="340.2" Top="122.85" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text25" Top="141.75" Width="340.12" Height="18.9" Text="Число слушателей, не допущенных к экзамену" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text26" Left="340.2" Top="141.75" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text27" Left="103.95" Top="189" Width="151.12" Height="18.9" Text="Директор ЦД и ПО" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text28" Left="444.15" Top="189" Width="273.97" Height="18.9" Text="[HeadFio]" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text29" Left="255.15" Top="189" Width="188.92" Height="18.9" Border.Lines="Bottom" Padding="2, 1, 2, 1" VertAlign="Center" Font="Times New Roman, 12pt"/>
     </ReportSummaryBand>
   </ReportPage>
 </Report>

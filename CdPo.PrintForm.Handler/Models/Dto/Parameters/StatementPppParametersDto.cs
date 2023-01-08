@@ -8,20 +8,50 @@ namespace CdPo.PrintForm.Handler.Models.Dto.Parameters;
 public class StatementPppParametersDto: BaseReportParametersDto
 {
     /// <summary>
-    /// Тестовая строка todo
+    /// Форма обучения
     /// </summary>
     [FastReportParameter]
-    public string TestStr1 { get; set; }
+    public string EducationalForm { get; set; }
     
     /// <summary>
-    /// Тестовая строка
+    /// Академический год
     /// </summary>
     [FastReportParameter]
-    public string TestStr2 { get; set; }
+    public string AcademicYear { get; set; }
     
     /// <summary>
-    /// Тестовая строка
+    /// Форма контроля
     /// </summary>
     [FastReportParameter]
-    public string TestStr3 { get; set; }
+    public string ControlForm { get; set; }
+    
+    /// <summary>
+    /// Группа ППП
+    /// </summary>
+    [FastReportParameter]
+    public string PppGroup { get; set; }
+    
+    /// <summary>
+    /// Дисциплина
+    /// </summary>
+    [FastReportParameter]
+    public string Discipline { get; set; }
+    
+    /// <summary>
+    /// Фамилия, имя, отчество преподавателя
+    /// </summary>
+    [FastReportParameter]
+    public string TeacherFio { get; set; }
+    
+    /// <summary>
+    /// Дата проведения экзамена
+    /// </summary>
+    [FastReportParameter]
+    public string ExamDate { get; set; }
+    
+    /// <summary>
+    /// ФИО директора ЦД и ПО
+    /// </summary>
+    [FastReportParameter]
+    public string HeadFio { get; set; }
 }
